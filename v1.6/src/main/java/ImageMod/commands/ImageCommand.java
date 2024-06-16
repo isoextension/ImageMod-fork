@@ -335,29 +335,17 @@ public class ImageCommand {
 
             boolean applicable = true;
             
-            if (!Block.isShapeFullBlock(vs)) {
-            	applicable = false;
-            }
+            if (!Block.isShapeFullBlock(vs)) { applicable = false; }
 
-            if (!state.isSolidRender(blocKReader, BlockPos.ZERO)) {
-            	applicable = false;
-            }
+            if (!state.isSolidRender(blocKReader, BlockPos.ZERO)) { applicable = false; }
             
-            if (block.hasDynamicShape()) {
-            	applicable = false;
-            }
+            if (block.hasDynamicShape()) { applicable = false; }
             
-            if (block.getLightEmission(state, blocKReader, BlockPos.ZERO) > 0) {
-            	applicable = false;
-            }
+            if (block.getLightEmission(state, blocKReader, BlockPos.ZERO) > 0) { applicable = false; }
             
-            if (block instanceof CoralBlock) {
-            	applicable = false;
-            }
+            if (block instanceof CoralBlock) { applicable = false; }
             
-            if (block instanceof LeavesBlock) {
-            	applicable = false;
-            }
+            if (block instanceof LeavesBlock) { applicable = false; }
             
             if (!applicable) {
             	 LOGGER.error(block.getName().getString() + " is not applicable");
@@ -376,7 +364,6 @@ public class ImageCommand {
             } catch(Exception e) {
                 LOGGER.warn(e.getMessage());
             }
-
         }
         return ret;
     }
